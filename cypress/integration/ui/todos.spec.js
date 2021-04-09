@@ -36,7 +36,7 @@ describe('Todo UI testing', () => {
             expect(xhr.response.body.name).to.eql('first todo')
         })
         cy.get('.todo-item').last().should('contain.text', 'first todo')
-        cy.log('hello github')
+        cy.log('hello github in')
     });
 
     it('should update status', () => {
