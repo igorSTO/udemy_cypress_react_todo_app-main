@@ -1,4 +1,5 @@
 {
   "projectId": "7ui2bp",
-  "retries": 2
+  "retries": 2,
+  "recoverFromRendererCrashes": true
 }
