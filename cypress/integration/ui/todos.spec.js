@@ -5,6 +5,7 @@
  *        npm install npm-run-all --save-dev - install this pakage
  * @link2 https://docs.cypress.io/guides/continuous-integration/introduction#Boot-your-server
  *        npm install --save-dev start-server-and-test - install this pakage
+ * @link3 https://github.com/cypress-io/cypress-docker-images - for docker
  * @author Igor Stotskyy
  * @run npx cypress run --spec "cypress/integration/ui/todos.spec.js"
  *      npx cypress run - all test case
@@ -16,6 +17,7 @@
  *      npx cypress run --record --key c3d6e734-5b17-4d06-a39c-06d5388fa6cc - record all tests in cypress dashboard
  *      npx cypress run --record --key c3d6e734-5b17-4d06-a39c-06d5388fa6cc --spec "cypress/integration/ui/todos.spec.js" --tag "todos.spec" - record onlt one spec file in cypress dashboard
  *      npm run build:test - build application first and run all tests cases on cy dashboard
+ *      npm run "run:docker" - run in docker container
  */
 
 /// <reference types="cypress" />

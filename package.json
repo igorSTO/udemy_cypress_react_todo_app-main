@@ -24,6 +24,7 @@
         "test": "react-scripts test --env=jsdom",
         "eject": "react-scripts eject",
         "e2e:chrome": "npx cypress run --browser chrome --headless",
-        "e2e:firefox": "npx cypress run --browser firefox --headless"
+        "e2e:firefox": "npx cypress run --browser firefox --headless",
+        "run:docker": "docker build -f Dockerfile . -t todo-app-cypress"
     }
 }
