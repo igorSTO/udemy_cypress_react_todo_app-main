@@ -20,7 +20,6 @@
         "start": "npm-run-all --parallel start:server start:frontend",
         "cy:run": "npx cypress run --record --key c3d6e734-5b17-4d06-a39c-06d5388fa6cc --parallel",
         "build:test": "start-server-and-test start http://localhost:3000 cy:run",
-        "build:test2": "start-server-and-test start cy:run",
         "build": "react-scripts build",
         "test": "react-scripts test --env=jsdom",
         "eject": "react-scripts eject",
