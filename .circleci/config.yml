@@ -11,5 +11,5 @@ workflows:
           store_artifacts: true
           command: npm run build:test
           parallel: true
-          parallelism: 2
-          group: 2 machines
+          parallelism: 4
+          group: 4 machines
