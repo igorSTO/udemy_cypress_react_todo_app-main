@@ -21,7 +21,7 @@ workflows:
           spec: "cypress/integration/api-copy"
 
       - cypress/run:
-          name: Cypress:
+          name: Cypress:UI-copy
           executor: chrome-ff
           record: true
           store_artifacts: true
@@ -33,7 +33,7 @@ workflows:
           spec: "cypress/integration/ui-copy"
 
       - cypress/run:
-          name: Cypress:
+          name: Cypress:The-rest
           executor: chrome-ff
           record: true
           store_artifacts: true
