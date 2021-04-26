@@ -1,45 +1,47 @@
 version: 2.1
 orbs:
-  cypress: cypress-io/cypress@1.26.0
-executors:
-  chrome-ff:
-    docker:
-      - image: 'cypress/browsers:node12.14.1-chrome85-ff81'
+  cypress: cypress-io/cypress@1
 workflows:
   build:
     jobs:
+      - cypress/install
       - cypress/run:
+          requires:
+            - cypress/install
           name: Cypress:Api-copy
-          executor: chrome-ff
           record: true
           store_artifacts: true
           command: npm run build:test
           parallel: true
           parallelism: 4
-          group: 4 machines
+          group: Api-copy
           browser: chrome
           spec: "cypress/integration/api-copy"
 
+      - cypress/install
       - cypress/run:
+          requires:
+            - cypress/install
           name: Cypress:UI-copy
-          executor: chrome-ff
           record: true
           store_artifacts: true
           command: npm run build:test
           parallel: true
           parallelism: 4
-          group: 4 machines
+          group: UI-copy
           browser: chrome
           spec: "cypress/integration/ui-copy"
 
+      - cypress/install
       - cypress/run:
+          requires:
+            - cypress/install
           name: Cypress:The-rest
-          executor: chrome-ff
           record: true
           store_artifacts: true
           command: npm run build:test
           parallel: true
           parallelism: 4
-          group: 4 machines
+          group: The-rest
           browser: chrome
           spec: "cypress/integration/api,cypress/integration/api-request,cypress/integration/ui"
