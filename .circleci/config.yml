@@ -6,9 +6,10 @@ workflows:
     jobs:
       - cypress/install
       - cypress/run:
+          name: Cypress:Api-copy
           requires:
             - cypress/install
-          name: Cypress:Api-copy
+          executor: cypress/browsers-chrome69
           record: true
           store_artifacts: true
           command: npm run build:test
@@ -17,12 +18,11 @@ workflows:
           group: Api-copy
           browser: chrome
           spec: "cypress/integration/api-copy"
-
-      - cypress/install
       - cypress/run:
+          name: Cypress:UI-copy
           requires:
             - cypress/install
-          name: Cypress:UI-copy
+          executor: cypress/browsers-chrome69
           record: true
           store_artifacts: true
           command: npm run build:test
@@ -31,12 +31,10 @@ workflows:
           group: UI-copy
           browser: chrome
           spec: "cypress/integration/ui-copy"
-
-      - cypress/install
       - cypress/run:
+          name: Cypress:The-rest
           requires:
             - cypress/install
-          name: Cypress:The-rest
           record: true
           store_artifacts: true
           command: npm run build:test
