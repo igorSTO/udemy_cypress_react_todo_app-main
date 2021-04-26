@@ -9,7 +9,6 @@ workflows:
           name: Cypress:Api-copy
           requires:
             - cypress/install
-          executor: cypress/browsers-chrome69
           record: true
           store_artifacts: true
           command: npm run build:test
@@ -22,7 +21,6 @@ workflows:
           name: Cypress:UI-copy
           requires:
             - cypress/install
-          executor: cypress/browsers-chrome69
           record: true
           store_artifacts: true
           command: npm run build:test
