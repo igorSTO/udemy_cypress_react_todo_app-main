@@ -8,6 +8,7 @@ describe('Name of the group', () => {
     before(() => {
         cy.addNewApiTodo()
         cy.visit('http://localhost:3000')
+        cy.log('hello')
     })
 
     it('GET request', () => {
