@@ -15,12 +15,12 @@ workflows:
           parallel: true
           parallelism: 4
           group: Api-copy
-          browser: chrome
           spec: "cypress/integration/api-copy"
       - cypress/run:
           name: Cypress:UI-copy
           requires:
             - cypress/install
+          executor: cypress/browsers-chrome69
           record: true
           store_artifacts: true
           command: npm run build:test
@@ -33,6 +33,7 @@ workflows:
           name: Cypress:The-rest
           requires:
             - cypress/install
+          executor: cypress/browsers-chrome69
           record: true
           store_artifacts: true
           command: npm run build:test
